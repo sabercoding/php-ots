@@ -25,7 +25,7 @@ class ErrorHandler
             return;
         }
 
-        $error = new \Error();
+        $error = new \PBError();
         $errorCode = null;
         $errorMessage = null;
 
