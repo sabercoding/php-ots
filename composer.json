@@ -13,27 +13,37 @@
     "support": {
         "forum": "http://bbs.aliyun.com/thread/226.html"
     },
-    
-    "require": {
-        "php": ">=5.3",
-        "guzzlehttp/guzzle": "3.8.1|~6.0.1|~6.1"
+
+    "require" : {
+        "php" : ">=5.5",
+        "guzzlehttp/guzzle": "^5.3.1|^6.2.1",
+        "guzzlehttp/psr7": "^1.4.1",
+        "guzzlehttp/promises": "~1.0",
+        "google/protobuf": "^3.5"
     },
 
-    "require-dev": {
-        "phpunit/phpunit": "4.0.*"
+    "require-dev" : {
+        "phpunit/phpunit": "^4.8.35|^5.4.3",
+        "satooshi/php-coveralls": "~1.0"
     },
-    
-    "autoload": {
-        "psr-4": {
-            "Aliyun\\OTS\\": "src/OTS",
-            "Aliyun\\OTS\\Handlers\\": "src/OTS/Handlers",
-            "Aliyun\\OTS\\Retry\\": "src/OTS/Retry"
+    "suggest": {
+        "ext-openssl": "Allows working with HTTPS",
+        "ext-curl": "To send requests using cURL"
+    },
+    "minimum-stability": "stable",
+    "autoload" : {
+        "psr-4" : {
+            "Aliyun\\OTS\\" : "src/OTS",
+            "Aliyun\\OTS\\ProtoBuffer\\Protocol\\" : "src/OTS/ProtoBuffer/Protocol",
+            "Aliyun\\OTS\\Handlers\\" : "src/OTS/Handlers",
+            "Aliyun\\OTS\\Consts\\" : "src/OTS/Consts",
+            "Aliyun\\OTS\\Retry\\" : "src/OTS/Retry"
         },
-        "files": [
-            "src/OTS/ProtoBuffer/pb_message.php",
-            "src/OTS/ProtoBuffer/pb_proto_ots.php",
-            "src/functions.php"
-        ] 
+        "files" : [
+            "src/functions.php",
+            "src/OTS/ProtoBuffer/GPBMetadata/TableStore.php",
+            "src/OTS/ProtoBuffer/GPBMetadata/TableStoreFilter.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
