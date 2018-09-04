@@ -1,3 +1,19 @@
+# 版本 4.1.0 发布于 2018/06/05
+1. 完善文档，修复bug.
+2. 增加 ComputeSplitPointsBySize 接口，并增加样例
+3. 增加流相关接口，ListStream, DescribeStream, GetShardIterator, GetStreamRecord.
+4. 变更：GetRow, BatchGetRow, GetRange支持TimeRange过滤.
+5. 变更：CreateTable, UpdateTable, DescribeTable 支持stream设置.
+
+# 版本 4.0.0 发布于 2018/05/15
+1. 支持5.5以上php版本，包括5.5、5.6、7.0、7.1、7.2等版本，只支持64位的PHP系统，推荐使用PHP7.
+2. 新功能：支持TTL设置，createTable, updateTable新增table_options参数
+3. 新功能：支持多版本，putRow, updateRow, deleteRow, batchGetRow均支持timestamp设置，getRow, getRange, BatchGet等接口支持max_versions过滤
+4. 新功能：支持主键列自增功能, 接口新增return_type, 返回新增primary_key，返回对应操作的primary_key
+5. 变更：底层protobuf升级成Google官方版本protobuf-php库
+6. 变更：各接口的primary_key变更成list类型,保证顺序性
+7. 变更：各接口的attribute_columns变更成list类型，以支持多版本功能
+
 # 版本 2.0.3 发布于 2016/05/15
 
 1. 删除无用的代码
